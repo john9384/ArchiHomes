@@ -1,0 +1,79 @@
+.header {
+  background-color: $color-grey-dark;
+  grid-column: full-start / col-end 6;
+  background-image: linear-gradient(
+      rgba($color-sec, 0.93),
+      rgba($color-sec, 0.93)
+    ),
+    url(./assets/img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 8rem;
+  padding-top: 4rem;
+  color: $color-grey-lighter;
+
+  display: grid;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
+  row-gap: 1.5rem;
+  justify-content: center;
+
+  @media only screen and (max-width: $res-medium) {
+    grid-column: 1 / -1;
+  }
+
+  @media only screen and (max-width: $res-small) {
+    padding: 5rem;
+  }
+
+  &__logo {
+    height: 6rem;
+    justify-self: center;
+    color: $color-grey-light;
+    font-size: 3rem;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-weight: 700;
+    border-top: 3px double white;
+    border-bottom: 3px double white;
+  }
+
+  &__btn {
+    align-self: start;
+    justify-self: start;
+    background-color: $color-tet;
+    color: $color-grey-light;
+  }
+
+  &__seenon-text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+    align-items: center;
+
+    font-size: 1.6rem;
+    color: $color-grey-lighter;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 1px;
+      display: block;
+      background-color: currentColor;
+    }
+  }
+
+  &__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3rem;
+    justify-items: center;
+    align-items: center;
+
+    img {
+      max-height: 2.5rem;
+      max-width: 100%;
+      filter: brightness(70%);
+    }
+  }
+}
